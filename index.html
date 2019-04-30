@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <div class="buttons-block">
+                <div>
+                    <button type="button" id="next-btn" class="button">Next element</button>
+                    <div id="next-error" >No element</div>
+                </div>
+                <div>
+                    <button type="button" id="prev-btn" class="button">Previous element</button>
+                    <div id="prev-error" >No element</div>
+                </div>
+                            
+                 <div>
+                    <button type="button" id="current-btn" class="button">Current</button>
+            
+                </div>
+                <div>
+                    <button type="button" id="rewind-btn" class="button">Rewind</button>
+                
+                </div>
+                <div class="key">
+                    <button type="button" id="key-btn" class="button">Key</button>
+                    <div id="key-message"></div>
+                </div>
+            </div>   
+        <div id="wrapper">
+                
+                <h2>Enter the Maximum number</h2>
+                    
+                <input type="text" id="input">
+                <button type="button" id="start-btn" >start</button>
+                <ul id="fibNum">
+                       
+                </ul>
+        </div>
+                   
+    </div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous">
+  </script>
+   <script src="main.js"></script>
+</body>
+</html>

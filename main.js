@@ -10,7 +10,6 @@ class FiboIterator {
         this.errorPrev = document.querySelector('#prev-error');
         this.keyMessage = document.querySelector('#key-message');
         
-
         this.isNextCheck = true;
         this.isPrevCheck = false;
         this.isStarted = false;
@@ -117,7 +116,7 @@ class FiboIterator {
             second += first;
             first = temp;
         }
-        this.fibonacciRow = arr;
+        this.fibonacciRow = arr; // variable for fibonacci row
         this.render();    
     }
 
@@ -143,7 +142,7 @@ class FiboIterator {
 
     //return index of element
     keyButton() {
-        if(!this.isStarted) return false;
+        if(!this.isStarted) return null;
         this.keyMessage.innerHTML = `index of current element is <em>${this.index}</em>`;
         setTimeout(() => {
             this.keyMessage.textContent = ``;
@@ -152,46 +151,40 @@ class FiboIterator {
 
     //return next element
     next() {
-        const numberList = document.querySelectorAll('li');
-
         this.isPrevCheck = true;
-        if(!this.isNextCheck) return false;
+        if(!this.isNextCheck) return null;
         
-        if(this.index >= numberList.length - 1) {
-            console.log('No elements');
-            return this.isNextCheck = false;
+        if(this.index >= this.fibonacciRow.length - 1) {
+            this.isNextCheck = false;
+            return null;
         }
 
-        this.index++
-        return numberList[this.index].textContent;
+        this.index++;
+        return this.fibonacciRow[this.index];
     }
 
     //return previous element
     prev() {
-        const numberList = document.querySelectorAll('li');
-
         this.isNextCheck = true;
-        
-        if(!this.isPrevCheck) return false;
+        if(!this.isPrevCheck) return null;
         
         if(this.index == 0) {
-           console.log('No elements');
-           return this.isPrevCheck = false;
+            this.isPrevCheck = false;
+            return null;
         }
 
         this.index--;
-        return numberList[this.index].textContent;  
+        return this.fibonacciRow[this.index];  
     }
 
     current() {
-        const numberList = document.querySelectorAll('li');
-        return numberList[this.index].textContent;
+        return this.fibonacciRow[this.index];
         
     }
 
     key() {
-        if(!this.isStarted) return false;
-        return `index of current element is ${this.index}`;
+        if(!this.isStarted) return null;
+        return this.index;
         
     }
 
@@ -202,5 +195,4 @@ class FiboIterator {
 }
 
 const iter = new FiboIterator();
-
 
